@@ -335,6 +335,7 @@ create table CPSpecificationOption (
 );
 
 create table CPTaxCategory (
+	externalReferenceCode VARCHAR(75) null,
 	CPTaxCategoryId LONG not null primary key,
 	companyId LONG,
 	userId LONG,

@@ -71,7 +71,7 @@ public class CPTaxCategoryServiceSoap {
 			addCPTaxCategory(
 				String[] nameMapLanguageIds, String[] nameMapValues,
 				String[] descriptionMapLanguageIds,
-				String[] descriptionMapValues,
+				String[] descriptionMapValues, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws RemoteException {
 
@@ -84,7 +84,8 @@ public class CPTaxCategoryServiceSoap {
 
 			com.liferay.commerce.product.model.CPTaxCategory returnValue =
 				CPTaxCategoryServiceUtil.addCPTaxCategory(
-					nameMap, descriptionMap, serviceContext);
+					nameMap, descriptionMap, externalReferenceCode,
+					serviceContext);
 
 			return com.liferay.commerce.product.model.CPTaxCategorySoap.
 				toSoapModel(returnValue);
@@ -228,7 +229,7 @@ public class CPTaxCategoryServiceSoap {
 			updateCPTaxCategory(
 				long cpTaxCategoryId, String[] nameMapLanguageIds,
 				String[] nameMapValues, String[] descriptionMapLanguageIds,
-				String[] descriptionMapValues)
+				String[] descriptionMapValues, String externalReferenceCode)
 		throws RemoteException {
 
 		try {
@@ -240,7 +241,8 @@ public class CPTaxCategoryServiceSoap {
 
 			com.liferay.commerce.product.model.CPTaxCategory returnValue =
 				CPTaxCategoryServiceUtil.updateCPTaxCategory(
-					cpTaxCategoryId, nameMap, descriptionMap);
+					cpTaxCategoryId, nameMap, descriptionMap,
+					externalReferenceCode);
 
 			return com.liferay.commerce.product.model.CPTaxCategorySoap.
 				toSoapModel(returnValue);

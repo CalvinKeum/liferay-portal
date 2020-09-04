@@ -54,11 +54,12 @@ public class CPTaxCategoryLocalServiceWrapper
 	public com.liferay.commerce.product.model.CPTaxCategory addCPTaxCategory(
 			java.util.Map<java.util.Locale, String> nameMap,
 			java.util.Map<java.util.Locale, String> descriptionMap,
+			String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpTaxCategoryLocalService.addCPTaxCategory(
-			nameMap, descriptionMap, serviceContext);
+			nameMap, descriptionMap, externalReferenceCode, serviceContext);
 	}
 
 	@Override
@@ -248,6 +249,22 @@ public class CPTaxCategoryLocalServiceWrapper
 		return _cpTaxCategoryLocalService.fetchCPTaxCategory(CPTaxCategoryId);
 	}
 
+	/**
+	 * Returns the cp tax category with the matching external reference code and company.
+	 *
+	 * @param companyId the primary key of the company
+	 * @param externalReferenceCode the cp tax category's external reference code
+	 * @return the matching cp tax category, or <code>null</code> if a matching cp tax category could not be found
+	 */
+	@Override
+	public com.liferay.commerce.product.model.CPTaxCategory
+		fetchCPTaxCategoryByReferenceCode(
+			long companyId, String externalReferenceCode) {
+
+		return _cpTaxCategoryLocalService.fetchCPTaxCategoryByReferenceCode(
+			companyId, externalReferenceCode);
+	}
+
 	@Override
 	public java.util.List<com.liferay.commerce.product.model.CPTaxCategory>
 		findCPTaxCategoriesByCompanyId(
@@ -380,11 +397,12 @@ public class CPTaxCategoryLocalServiceWrapper
 	public com.liferay.commerce.product.model.CPTaxCategory updateCPTaxCategory(
 			long cpTaxCategoryId,
 			java.util.Map<java.util.Locale, String> nameMap,
-			java.util.Map<java.util.Locale, String> descriptionMap)
+			java.util.Map<java.util.Locale, String> descriptionMap,
+			String externalReferenceCode)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpTaxCategoryLocalService.updateCPTaxCategory(
-			cpTaxCategoryId, nameMap, descriptionMap);
+			cpTaxCategoryId, nameMap, descriptionMap, externalReferenceCode);
 	}
 
 	@Override

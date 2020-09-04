@@ -36,11 +36,12 @@ public class CPTaxCategoryServiceWrapper
 	public com.liferay.commerce.product.model.CPTaxCategory addCPTaxCategory(
 			java.util.Map<java.util.Locale, String> nameMap,
 			java.util.Map<java.util.Locale, String> descriptionMap,
+			String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpTaxCategoryService.addCPTaxCategory(
-			nameMap, descriptionMap, serviceContext);
+			nameMap, descriptionMap, externalReferenceCode, serviceContext);
 	}
 
 	@Override
@@ -118,11 +119,12 @@ public class CPTaxCategoryServiceWrapper
 	public com.liferay.commerce.product.model.CPTaxCategory updateCPTaxCategory(
 			long cpTaxCategoryId,
 			java.util.Map<java.util.Locale, String> nameMap,
-			java.util.Map<java.util.Locale, String> descriptionMap)
+			java.util.Map<java.util.Locale, String> descriptionMap,
+			String externalReferenceCode)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpTaxCategoryService.updateCPTaxCategory(
-			cpTaxCategoryId, nameMap, descriptionMap);
+			cpTaxCategoryId, nameMap, descriptionMap, externalReferenceCode);
 	}
 
 	@Override

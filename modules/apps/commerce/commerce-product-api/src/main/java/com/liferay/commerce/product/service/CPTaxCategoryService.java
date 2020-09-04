@@ -65,7 +65,7 @@ public interface CPTaxCategoryService extends BaseService {
 	 */
 	public CPTaxCategory addCPTaxCategory(
 			Map<Locale, String> nameMap, Map<Locale, String> descriptionMap,
-			ServiceContext serviceContext)
+			String externalReferenceCode, ServiceContext serviceContext)
 		throws PortalException;
 
 	public int countCPTaxCategoriesByCompanyId(long companyId, String keyword)
@@ -104,7 +104,7 @@ public interface CPTaxCategoryService extends BaseService {
 
 	public CPTaxCategory updateCPTaxCategory(
 			long cpTaxCategoryId, Map<Locale, String> nameMap,
-			Map<Locale, String> descriptionMap)
+			Map<Locale, String> descriptionMap, String externalReferenceCode)
 		throws PortalException;
 
 }

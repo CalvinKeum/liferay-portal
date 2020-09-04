@@ -82,7 +82,7 @@ public interface CPTaxCategoryLocalService
 
 	public CPTaxCategory addCPTaxCategory(
 			Map<Locale, String> nameMap, Map<Locale, String> descriptionMap,
-			ServiceContext serviceContext)
+			String externalReferenceCode, ServiceContext serviceContext)
 		throws PortalException;
 
 	public int countCPTaxCategoriesByCompanyId(long companyId, String keyword);
@@ -214,6 +214,17 @@ public interface CPTaxCategoryLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public CPTaxCategory fetchCPTaxCategory(long CPTaxCategoryId);
 
+	/**
+	 * Returns the cp tax category with the matching external reference code and company.
+	 *
+	 * @param companyId the primary key of the company
+	 * @param externalReferenceCode the cp tax category's external reference code
+	 * @return the matching cp tax category, or <code>null</code> if a matching cp tax category could not be found
+	 */
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public CPTaxCategory fetchCPTaxCategoryByReferenceCode(
+		long companyId, String externalReferenceCode);
+
 	public List<CPTaxCategory> findCPTaxCategoriesByCompanyId(
 		long companyId, String keyword, int start, int end);
 
@@ -297,7 +308,7 @@ public interface CPTaxCategoryLocalService
 
 	public CPTaxCategory updateCPTaxCategory(
 			long cpTaxCategoryId, Map<Locale, String> nameMap,
-			Map<Locale, String> descriptionMap)
+			Map<Locale, String> descriptionMap, String externalReferenceCode)
 		throws PortalException;
 
 }

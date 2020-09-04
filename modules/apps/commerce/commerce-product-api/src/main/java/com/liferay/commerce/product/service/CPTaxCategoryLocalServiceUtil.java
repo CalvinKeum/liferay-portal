@@ -59,11 +59,12 @@ public class CPTaxCategoryLocalServiceUtil {
 			addCPTaxCategory(
 				java.util.Map<java.util.Locale, String> nameMap,
 				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCPTaxCategory(
-			nameMap, descriptionMap, serviceContext);
+			nameMap, descriptionMap, externalReferenceCode, serviceContext);
 	}
 
 	public static int countCPTaxCategoriesByCompanyId(
@@ -243,6 +244,21 @@ public class CPTaxCategoryLocalServiceUtil {
 		return getService().fetchCPTaxCategory(CPTaxCategoryId);
 	}
 
+	/**
+	 * Returns the cp tax category with the matching external reference code and company.
+	 *
+	 * @param companyId the primary key of the company
+	 * @param externalReferenceCode the cp tax category's external reference code
+	 * @return the matching cp tax category, or <code>null</code> if a matching cp tax category could not be found
+	 */
+	public static com.liferay.commerce.product.model.CPTaxCategory
+		fetchCPTaxCategoryByReferenceCode(
+			long companyId, String externalReferenceCode) {
+
+		return getService().fetchCPTaxCategoryByReferenceCode(
+			companyId, externalReferenceCode);
+	}
+
 	public static java.util.List
 		<com.liferay.commerce.product.model.CPTaxCategory>
 			findCPTaxCategoriesByCompanyId(
@@ -368,11 +384,12 @@ public class CPTaxCategoryLocalServiceUtil {
 			updateCPTaxCategory(
 				long cpTaxCategoryId,
 				java.util.Map<java.util.Locale, String> nameMap,
-				java.util.Map<java.util.Locale, String> descriptionMap)
+				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCPTaxCategory(
-			cpTaxCategoryId, nameMap, descriptionMap);
+			cpTaxCategoryId, nameMap, descriptionMap, externalReferenceCode);
 	}
 
 	public static CPTaxCategoryLocalService getService() {

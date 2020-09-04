@@ -56,6 +56,7 @@ public class CPTaxCategoryServiceHttp {
 				HttpPrincipal httpPrincipal,
 				java.util.Map<java.util.Locale, String> nameMap,
 				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
@@ -65,7 +66,8 @@ public class CPTaxCategoryServiceHttp {
 				_addCPTaxCategoryParameterTypes0);
 
 			MethodHandler methodHandler = new MethodHandler(
-				methodKey, nameMap, descriptionMap, serviceContext);
+				methodKey, nameMap, descriptionMap, externalReferenceCode,
+				serviceContext);
 
 			Object returnObj = null;
 
@@ -388,7 +390,8 @@ public class CPTaxCategoryServiceHttp {
 			updateCPTaxCategory(
 				HttpPrincipal httpPrincipal, long cpTaxCategoryId,
 				java.util.Map<java.util.Locale, String> nameMap,
-				java.util.Map<java.util.Locale, String> descriptionMap)
+				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -397,7 +400,8 @@ public class CPTaxCategoryServiceHttp {
 				_updateCPTaxCategoryParameterTypes8);
 
 			MethodHandler methodHandler = new MethodHandler(
-				methodKey, cpTaxCategoryId, nameMap, descriptionMap);
+				methodKey, cpTaxCategoryId, nameMap, descriptionMap,
+				externalReferenceCode);
 
 			Object returnObj = null;
 
@@ -432,7 +436,7 @@ public class CPTaxCategoryServiceHttp {
 
 	private static final Class<?>[] _addCPTaxCategoryParameterTypes0 =
 		new Class[] {
-			java.util.Map.class, java.util.Map.class,
+			java.util.Map.class, java.util.Map.class, String.class,
 			com.liferay.portal.kernel.service.ServiceContext.class
 		};
 	private static final Class<?>[]
@@ -457,6 +461,8 @@ public class CPTaxCategoryServiceHttp {
 	private static final Class<?>[] _getCPTaxCategoryParameterTypes7 =
 		new Class[] {long.class};
 	private static final Class<?>[] _updateCPTaxCategoryParameterTypes8 =
-		new Class[] {long.class, java.util.Map.class, java.util.Map.class};
+		new Class[] {
+			long.class, java.util.Map.class, java.util.Map.class, String.class
+		};
 
 }

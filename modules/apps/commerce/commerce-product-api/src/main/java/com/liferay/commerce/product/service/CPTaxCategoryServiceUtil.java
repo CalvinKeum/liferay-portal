@@ -41,11 +41,12 @@ public class CPTaxCategoryServiceUtil {
 			addCPTaxCategory(
 				java.util.Map<java.util.Locale, String> nameMap,
 				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCPTaxCategory(
-			nameMap, descriptionMap, serviceContext);
+			nameMap, descriptionMap, externalReferenceCode, serviceContext);
 	}
 
 	public static int countCPTaxCategoriesByCompanyId(
@@ -117,11 +118,12 @@ public class CPTaxCategoryServiceUtil {
 			updateCPTaxCategory(
 				long cpTaxCategoryId,
 				java.util.Map<java.util.Locale, String> nameMap,
-				java.util.Map<java.util.Locale, String> descriptionMap)
+				java.util.Map<java.util.Locale, String> descriptionMap,
+				String externalReferenceCode)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCPTaxCategory(
-			cpTaxCategoryId, nameMap, descriptionMap);
+			cpTaxCategoryId, nameMap, descriptionMap, externalReferenceCode);
 	}
 
 	public static CPTaxCategoryService getService() {
