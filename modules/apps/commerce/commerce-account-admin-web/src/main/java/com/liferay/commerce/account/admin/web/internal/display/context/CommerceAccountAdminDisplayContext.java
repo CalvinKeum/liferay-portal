@@ -167,7 +167,7 @@ public class CommerceAccountAdminDisplayContext
 			return CommerceAccountConstants.SITE_TYPE_B2C;
 		}
 
-		return CommerceAccountConstants.SITE_TYPE_B2C_B2B;
+		return CommerceAccountConstants.SITE_TYPE_B2X;
 	}
 
 	protected String getNavigation(String suffix) {
