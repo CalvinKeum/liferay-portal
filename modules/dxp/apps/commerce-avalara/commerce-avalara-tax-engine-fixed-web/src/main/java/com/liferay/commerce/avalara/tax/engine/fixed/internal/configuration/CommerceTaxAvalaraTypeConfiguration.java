@@ -12,7 +12,7 @@
  *
  */
 
-package com.liferay.commerce.avalara.tax.engine.fixed.configuration;
+package com.liferay.commerce.avalara.tax.engine.fixed.internal.configuration;
 
 import aQute.bnd.annotation.metatype.Meta;
 
@@ -25,7 +25,7 @@ import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClass
 	category = "tax-rate", scope = ExtendedObjectClassDefinition.Scope.GROUP
 )
 @Meta.OCD(
-	id = "com.liferay.commerce.avalara.tax.engine.fixed.configuration.CommerceTaxAvalaraTypeConfiguration",
+	id = "com.liferay.commerce.avalara.tax.engine.fixed.internal.configuration.CommerceTaxAvalaraTypeConfiguration",
 	localization = "content/Language",
 	name = "commerce-avalara-tax-type-configuration-name"
 )

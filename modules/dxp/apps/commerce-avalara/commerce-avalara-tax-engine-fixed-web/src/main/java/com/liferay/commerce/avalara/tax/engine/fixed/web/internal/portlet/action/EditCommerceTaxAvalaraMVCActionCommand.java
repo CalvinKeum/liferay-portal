@@ -14,7 +14,7 @@
 
 package com.liferay.commerce.avalara.tax.engine.fixed.web.internal.portlet.action;
 
-import com.liferay.commerce.avalara.tax.engine.fixed.configuration.CommerceTaxAvalaraTypeConfiguration;
+import com.liferay.commerce.avalara.tax.engine.fixed.internal.configuration.CommerceTaxAvalaraTypeConfiguration;
 import com.liferay.commerce.constants.CommercePortletKeys;
 import com.liferay.commerce.tax.model.CommerceTaxMethod;
 import com.liferay.commerce.tax.service.CommerceTaxMethodService;

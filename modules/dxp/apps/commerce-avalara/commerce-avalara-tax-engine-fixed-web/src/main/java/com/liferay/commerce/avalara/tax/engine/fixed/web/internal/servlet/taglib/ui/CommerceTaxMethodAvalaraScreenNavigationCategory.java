@@ -14,7 +14,7 @@
 
 package com.liferay.commerce.avalara.tax.engine.fixed.web.internal.servlet.taglib.ui;
 
-import com.liferay.commerce.avalara.tax.engine.fixed.configuration.CommerceTaxAvalaraTypeConfiguration;
+import com.liferay.commerce.avalara.tax.engine.fixed.internal.configuration.CommerceTaxAvalaraTypeConfiguration;
 import com.liferay.commerce.constants.CommerceTaxScreenNavigationConstants;
 import com.liferay.commerce.currency.service.CommerceCurrencyLocalService;
 import com.liferay.commerce.percentage.PercentageFormatter;
@@ -57,7 +57,7 @@ import org.osgi.service.component.annotations.Reference;
 	},
 	service = {ScreenNavigationCategory.class, ScreenNavigationEntry.class}
 )
-public class CommerceTaxMethodAvalaraScreenNavigationEntry
+public class CommerceTaxMethodAvalaraScreenNavigationCategory
 	implements ScreenNavigationCategory,
 			   ScreenNavigationEntry<CommerceTaxMethod> {
 
